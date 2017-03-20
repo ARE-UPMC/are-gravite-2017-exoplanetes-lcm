@@ -8,7 +8,7 @@ Created on Lundi 06 Mars 2017 - ARE -
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import animation
-from pylab import *
+
 
 circle1 = plt.Circle((0, 0), 0.3, color="red", label="Centre de masse")
 fig= plt.figure()
