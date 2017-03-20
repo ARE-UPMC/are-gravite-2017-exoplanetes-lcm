@@ -8,6 +8,7 @@ Created on Lundi 06 Mars 2017 - ARE -
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import animation
+from pylab import *
 
 circle1 = plt.Circle((0, 0), 0.3, color="red", label="Centre de masse")
 fig= plt.figure()
@@ -17,6 +18,7 @@ fig.set_size_inches(50, 50)
 
 
 ax=plt.axes(xlim=(-4, 4), ylim=(-4, 4))
+ax.set_axis_off()
 ax.add_artist(circle1)
 #Tracer des cercles#
 theta = np.linspace(0, 2*np.pi, 60)
@@ -44,11 +46,13 @@ radius2=1
 patch = plt.Circle((5,-5), size, fc='b', label="Exoplanete")
 patch2 = plt.Circle((0, -2), size2, fc='yellow', label="Soleil")
 
+
 def init():
     patch.center = (xcenter, ycenter)
     patch2.center = (xcenter, ycenter)
     ax.add_patch(patch)
     ax.add_patch(patch2)
+
     return patch, patch2,
 
 def animate(t):
