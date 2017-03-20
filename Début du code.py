@@ -11,6 +11,7 @@ from matplotlib import animation
 
 
 circle1 = plt.Circle((0, 0), 0.3, color="red", label="Centre de masse")
+circle2 = plt.Circle((0,-3.9), 0.2, color="blue", label="Terre (Observateur)")
 fig= plt.figure()
 fig.set_dpi(100)
 fig.set_size_inches(50, 50)
@@ -18,8 +19,9 @@ fig.set_size_inches(50, 50)
 
 
 ax=plt.axes(xlim=(-4, 4), ylim=(-4, 4))
-ax.set_axis_off()
+
 ax.add_artist(circle1)
+ax.add_artist(circle2)
 #Tracer des cercles#
 theta = np.linspace(0, 2*np.pi, 60)
 
@@ -32,6 +34,8 @@ y2 = np.sin(theta)
 
 #Affichage des orbites#
 plt.plot(x1,y1,x2,y2,color="black")
+plt.plot([0.2,0.2],[-4,4], color="green")
+plt.plot([-0.2,-0.2],[-4,4], color="green")
 
 size = 0.1
 xcenter = 0
@@ -43,7 +47,7 @@ radius = 3
 size2 = 0.3
 radius2=1
 
-patch = plt.Circle((5,-5), size, fc='b', label="Exoplanete")
+patch = plt.Circle((5,-5), size, fc='black', label="Exoplanete")
 patch2 = plt.Circle((0, -2), size2, fc='yellow', label="Soleil")
 
 
@@ -70,9 +74,9 @@ def animate(t):
 
 
 plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=1,
-           ncol=2, mode="expand", borderaxespad=0, handles=[circle1, patch, patch2])
+           ncol=2, mode="expand", borderaxespad=0, handles=[circle1, patch, patch2, circle2])
 
-anim = animation.FuncAnimation(fig, animate, init_func=init, frames=1000, interval=20, blit=True)
+anim = animation.FuncAnimation(fig, animate, init_func=init, frames=1000000, interval=20, blit=True)
 
 
 plt.show()
