@@ -11,6 +11,7 @@ from matplotlib import animation
 
 
 
+
 #Creation des cercles representant le centre de masse et la terre#
 circle1 = plt.Circle((0, 0), 0.3, color="red", label="Centre de masse")
 circle2 = plt.Circle((0,-3.9), 0.2, color="blue", label="Terre (Observateur)")
@@ -21,7 +22,7 @@ fig.set_dpi(95)
 fig.set_size_inches(50, 50)
 ax=plt.axes(xlim=(-4, 4), ylim=(-4, 4))
 plt.axis('equal')
-plt.axis('off')#Effacement des axes
+plt.axis('on')#Effacement des axes
 manager = plt.get_current_fig_manager()
 manager.resize(*manager.window.maxsize())#Ouverture de la fenetre en Taille grande#
 
@@ -45,7 +46,12 @@ plt.plot(x1,y1,x2,y2,color="black")
 plt.plot([0.2,0.2],[-4,4], color="green")
 plt.plot([-0.2,-0.2],[-4,4], color="green")
 
-#Variables de l'exoplanète#
+#Affichage de la distance Terre- Exoplanete dans une legende differente#
+distance= plt.arrow(0,-3.7,0,0.6, head_width= 0.05, head_length= 0.1, fc='m', ec='m', label="(fleche) distance Terre/Exoplanete (60 AL)")
+first_legend = plt.legend(handles=[distance], loc="lower left")
+ax.add_artist(first_legend)
+
+#Variables de l'exoplanète#                
 size = 0.1
 xcenter = 0
 ycenter = 0
@@ -59,8 +65,8 @@ radius2=1
 #Creation des Patchs#
 patch = plt.Circle((5,-5), size, fc='black', label="Exoplanete (hd189533b)")
 patch2 = plt.Circle((0, -2), size2, fc='yellow', label="Soleil")
-patch3=plt.arrow(0,3,1, 0, head_width=0.05, head_length=0.1, fc="purple", ec="purple", label="sens du Soleil")
-patch4=plt.arrow(0,-1,-1,0, head_width=0.05, head_length=0.1, fc="orange", ec="orange", label="sens de l'exoplanete")
+patch3=plt.arrow(0,3,1, 0, head_width=0.05, head_length=0.1, fc="purple", ec="purple", label="(fleche) sens du Soleil")
+patch4=plt.arrow(0,-1,-1,0, head_width=0.05, head_length=0.1, fc="orange", ec="orange", label="(fleche) sens de l'exoplanete")
 
 #Fonction qui initialise l'animation#
 def init():
@@ -87,6 +93,7 @@ def animate(t):
 
 
 #Affichage de la lègende en boite au dessus de la figure#
+
 plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=1,ncol=2, mode="expand", borderaxespad=0, handles=[circle1, patch, patch2, circle2, patch3, patch4])
 
 #Appel de la fonction animation#
