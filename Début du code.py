@@ -47,11 +47,12 @@ plt.plot([0.2,0.2],[-4,4], color="green")
 plt.plot([-0.2,-0.2],[-4,4], color="green")
 
 #Affichage de la distance Terre- Exoplanete dans une legende differente#
-distance= plt.arrow(0,-3.7,0,0.6, head_width= 0.05, head_length= 0.1, fc='m', ec='m', label="(fleche) distance Terre/Exoplanete (60 AL)")
+distance= plt.arrow(0,-3.7,0,0.6, head_width= 0.05, head_length= 0.1, fc='m', ec='m', label="(fleche) 60 années lumiere = distance Terre/Exoplanete")
 first_legend = plt.legend(handles=[distance], loc="lower left")
 ax.add_artist(first_legend)
 
-#Variables de l'exoplanète#                
+
+#Variables de l'exoplanète#                  
 size = 0.1
 xcenter = 0
 ycenter = 0
