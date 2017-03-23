@@ -22,7 +22,7 @@ fig.set_dpi(95)
 fig.set_size_inches(50, 50)
 ax=plt.axes(xlim=(-4, 4), ylim=(-4, 4))
 plt.axis('equal')
-plt.axis('on')#Effacement des axes
+plt.axis('off')#Effacement des axes
 manager = plt.get_current_fig_manager()
 manager.resize(*manager.window.maxsize())#Ouverture de la fenetre en Taille grande#
 
