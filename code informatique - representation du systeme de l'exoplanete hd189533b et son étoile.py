@@ -2,7 +2,7 @@
 """
 Created on Lundi 06 Mars 2017 - ARE - 
 
-@author:  CARTON LORRIS 3521310 BOUKHALFI MOURAD 3679709
+@author:  CARTON LORRIS 3521310 & BOUKHALFI MOURAD 3679709
 """
 
 import numpy as np
