@@ -2,7 +2,7 @@
 """
 Created on Lundi 06 Mars 2017 - ARE - 
 
-@author: BOUKHALFI MOURAD 3679709 CARTON LORRIS 3521310
+@author:  CARTON LORRIS 3521310 BOUKHALFI MOURAD 3679709
 """
 
 import numpy as np
@@ -43,11 +43,11 @@ y2 = np.sin(theta)
 plt.plot(x1,y1,x2,y2,color="black")
 
 #Affichage de la ligne de visée#
-plt.plot([0.2,0.2],[-4,4], color="green")
-plt.plot([-0.2,-0.2],[-4,4], color="green")
+plt.plot([0.19,0.19],[-4,4], color="green")
+plt.plot([-0.21,-0.21],[-4,4], color="green")
 
 #Affichage de la distance Terre- Exoplanete dans une legende differente#
-distance= plt.arrow(0,-3.7,0,0.6, head_width= 0.05, head_length= 0.1, fc='m', ec='m', label="(fleche) 60 années lumiere = distance Terre/Exoplanete")
+distance= plt.arrow(0,-3.7,0,0.6, head_width= 0.05, head_length= 0.1, fc='m', ec='m', label="(fleche) 60 AL = distance Terre/Exoplanete")
 first_legend = plt.legend(handles=[distance], loc="lower left")
 ax.add_artist(first_legend)
 
@@ -66,8 +66,8 @@ radius2=1
 #Creation des Patchs#
 patch = plt.Circle((5,-5), size, fc='black', label="Exoplanete (hd189533b)")
 patch2 = plt.Circle((0, -2), size2, fc='yellow', label="Soleil")
-patch3=plt.arrow(0,3,1, 0, head_width=0.05, head_length=0.1, fc="purple", ec="purple", label="(fleche) sens du Soleil")
-patch4=plt.arrow(0,-1,-1,0, head_width=0.05, head_length=0.1, fc="orange", ec="orange", label="(fleche) sens de l'exoplanete")
+patch3=plt.arrow(0,3,1, 0, head_width=0.05, head_length=0.1, fc="purple", ec="purple", label="(fleche) sens de l'exoplanete")
+patch4=plt.arrow(0,1,1,0, head_width=0.05, head_length=0.1, fc="orange", ec="orange", label="(fleche) sens du Soleil ")
 
 #Fonction qui initialise l'animation#
 def init():
